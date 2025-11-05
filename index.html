@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beauty</title>
+    <!-- Font-awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Boostrap CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="header-section">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container navbar-container">
+          <a href="index.html" class="main-logo">
+            <img
+              src="./assets/page-one-images/beauty_logo.png"
+              alt="website-logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler ms-auto"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <div class="brand-logo">
+                <a href="index.html">
+                  <img
+                    src="./assets/page-one-images/beauty_logo.png"
+                    alt="brand-logo"
+                  />
+                </a>
+              </div>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <div class="off-divider"></div>
+
+            <div class="offcanvas-body">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <form class="search-wrap" role="search" autocomplete="off">
+                  <img
+                    src="./assets/page-one-images/navbar/navbar-search-icon.png"
+                    alt="Search"
+                    class="search-icon"
+                  />
+                  <input
+                    type="text"
+                    class="form-control search-input"
+                    id="siteSearch"
+                    placeholder="Search..."
+                    aria-label="Search"
+                  />
+                </form>
+
+                <li class="nav-item">
+                  <a
+                    class="nav-link hover-link active"
+                    aria-current="page"
+                    href="index.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link hover-link"
+                    aria-current="page"
+                    href="about.html"
+                    >About Us</a
+                  >
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Products
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Product One</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Product Two</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Product Three</a></li>
+                    <li>
+                      <a class="dropdown-item item-four" href="#"
+                        >Product Four</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    >Multimedia</a
+                  >
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Image Gallery</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Hand Growth</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item multi-fg" href="#">Face Growth</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link hover-link" aria-current="page" href="#"
+                    >Blog</a
+                  >
+                </li>
+                <li class="nav-item nav-contact">
+                  <a class="nav-link hover-link" aria-current="page" href="#"
+                    >Contact Us</a
+                  >
+                </li>
+                <ul class="nav-icons">
+                  <li class="nav-item nav-icon-account">
+                    <i class="fa-regular fa-user"></i>
+                  </li>
+                  <li class="nav-item nav-icon-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </li>
+                  <li class="nav-item nav-icon-heart">
+                    <i class="fa-regular fa-heart" id="heartIcon"></i>
+                  </li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Boostrap CDN -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Custom JS -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>
