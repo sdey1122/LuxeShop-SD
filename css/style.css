@@ -922,7 +922,7 @@ ul {
   color: var(--primary-text-color);
   letter-spacing: 0.2px;
   font-family: "Playfair Display", serif;
-  font-size: 30px;
+  font-size: 35px;
 }
 .why-title span {
   color: var(--secondary-text-color);
@@ -1484,7 +1484,6 @@ ul {
 
   /* Shop Section */
   .why-title {
-    font-size: 30px;
     text-align: center;
   }
   .lead_para {
