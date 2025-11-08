@@ -1274,7 +1274,7 @@ ul {
 }
 
 .horizontal-accordion {
-  padding: 50px 0;
+  padding: 50px 0 10px;
   display: flex;
   align-items: stretch;
   justify-content: space-between;
@@ -1462,7 +1462,120 @@ ul {
   padding-bottom: 48px;
 }
 
-/* Customer Section */
+/* Beauty Journal Scetion */
+.our-beauty-journal-section {
+  margin-top: -50px;
+}
+
+.decor-icon-jrnl {
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.journal-wrap {
+  width: 300px;
+  margin: 28px;
+  position: relative;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  cursor: pointer;
+}
+
+.journal-card {
+  border-radius: 22px;
+  overflow: hidden;
+  background: var(--tertiary-text-color);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  transition: all 0.6s ease;
+  position: relative;
+}
+
+.journal-card img {
+  width: 100%;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.journal-card::after {
+  content: "";
+  position: absolute;
+  top: -150%;
+  left: -150%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0) 45%,
+    rgba(255, 255, 255, 0.4) 55%,
+    rgba(255, 255, 255, 0) 65%
+  );
+  transform: translateX(-100%);
+  transition: transform 1.3s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.journal-mini {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: -24px auto 0;
+  background: #ffffff;
+  border-radius: 50px;
+  text-align: center;
+  padding: 14px 16px;
+  color: #3a2b1f;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.6s ease;
+}
+
+.journal-wrap:hover {
+  transform: translateY(-10px);
+  filter: brightness(1.05);
+}
+
+.journal-wrap:hover .journal-card {
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.18);
+  transform: scale(1.02);
+}
+
+.journal-wrap:hover .journal-card img {
+  transform: scale(1.06);
+}
+
+.journal-wrap:hover .journal-card::after {
+  transform: translateX(100%);
+  opacity: 1;
+}
+
+.journal-wrap:hover .journal-mini {
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(180deg, #fff6ef 0%, #ffffff 100%);
+  color: #2e1b0d;
+  transform: translateY(-3px);
+}
+
+.journal-wrap:hover::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 28px;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 240, 220, 0.6),
+    transparent 60%
+  );
+  filter: blur(10px);
+  z-index: 0;
+  pointer-events: none;
+}
 
 /* Media Queries */
 /* <=1400px */
@@ -1552,6 +1665,20 @@ ul {
   .nl-btn {
     width: 34px;
     height: 34px;
+  }
+
+  /* Beauty Journal Scetion */
+  .journal-wrap {
+    width: 260px;
+    margin: 22px;
+  }
+  .journal-mini {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+  .journal-card {
+    border-radius: 20px;
   }
 }
 
@@ -1917,6 +2044,22 @@ ul {
     width: 18px;
     height: 18px;
   }
+
+  /* Beauty Journal Scetion */
+  .journal-wrap {
+    width: 240px;
+    margin: 20px auto;
+  }
+  .journal-card {
+    border-radius: 18px;
+  }
+  .journal-card img {
+    transform: scale(1);
+  }
+  .journal-mini {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
 }
 
 /* <=768px */
@@ -2051,6 +2194,19 @@ ul {
     margin-left: auto;
     margin-right: auto;
     width: min(90%, 520px);
+  }
+
+  /* Beauty Journal Scetion */
+  .journal-wrap {
+    width: 220px;
+    margin: 18px auto;
+  }
+  .journal-card {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+  .journal-mini {
+    font-size: 13px;
+    padding: 9px 10px;
   }
 }
 
@@ -2257,6 +2413,41 @@ ul {
   .timings-arrow > div:first-child::before {
     width: 16px;
     height: 16px;
+  }
+
+  /* Beauty Journal Scetion */
+  .journal-wrap {
+    width: 230px;
+    margin: 16px auto;
+  }
+  .journal-card {
+    border-radius: 16px;
+  }
+  .journal-mini {
+    font-size: 12px;
+    padding: 8px 9px;
+    border-radius: 40px;
+  }
+  .journal-wrap:hover {
+    transform: none;
+  }
+  .journal-wrap:hover .journal-card {
+    transform: none;
+  }
+  .journal_title {
+    font-size: 16px;
+    text-align: center;
+  }
+  .para-span > .journal-span {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .journal-wrap {
+    text-align: center;
+  }
+  .j-span {
+    flex-direction: column;
   }
 }
 

@@ -60,7 +60,7 @@ function initProductsSlider() {
       slidesToScroll: 1,
       infinite: true,
       autoplay: true,
-      autoplaySpeed: 3000,
+      autoplaySpeed: 2000,
       prevArrow: $(".left_btn"),
       nextArrow: $(".right_btn"),
       responsive: [
@@ -77,6 +77,34 @@ function initProductsSlider() {
 }
 $(function () {
   $(window).on("load", initProductsSlider);
+});
+
+// jQuery (Beauty Journal Scetion)
+function initJournalSlider() {
+  const $slider = $(".autoplay-jrnl");
+  if (!$slider.hasClass("slick-initialized")) {
+    $slider.slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      prevArrow: $(".left_btn_jrnl"),
+      nextArrow: $(".right_btn_jrnl"),
+      responsive: [
+        { breakpoint: 1200, settings: { slidesToShow: 3 } },
+        { breakpoint: 992, settings: { slidesToShow: 3 } },
+        { breakpoint: 860, settings: { slidesToShow: 2 } },
+        { breakpoint: 768, settings: { slidesToShow: 2 } },
+        { breakpoint: 576, settings: { slidesToShow: 1 } },
+      ],
+    });
+  } else {
+    $slider.slick("setPosition");
+  }
+}
+$(function () {
+  $(window).on("load", initJournalSlider);
 });
 
 // Toggle Heart (Our Product Section) (jQuery)
