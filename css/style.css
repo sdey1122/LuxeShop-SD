@@ -1981,11 +1981,11 @@ ul {
   object-fit: contain;
   filter: brightness(0) saturate(100%) invert(27%) sepia(7%) saturate(419%)
     hue-rotate(2deg) brightness(95%) contrast(90%);
-  transition: filter 0.25s ease;
+  margin-top: 10px;
 }
 
 .footer-block li:hover .icon-wrap {
-  transform: translateY(-2px) scale(1.1);
+  transition: color 0.9s ease, transform 0.9s ease;
 }
 .footer-block li:hover .icon-wrap img {
   filter: brightness(0) saturate(100%) invert(49%) sepia(12%) saturate(1551%)
@@ -2006,10 +2006,14 @@ ul {
 }
 
 .span-para {
-  font-size: 13px;
+  font-size: 14px;
   margin-bottom: 20px;
   cursor: pointer;
   color: var(--primary-text-color);
+}
+
+.span-para-contact {
+  padding-bottom: 20px;
 }
 
 .footer-sep {
@@ -2046,6 +2050,51 @@ ul {
   flex-direction: column;
   align-items: center;
   padding: 0 14px;
+}
+
+.footer-block a {
+  position: relative;
+  display: inline-block;
+  color: var(--primary-text-color);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-block a::after {
+  content: "";
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.footer-block a:hover {
+  color: var(--secondary-text-color);
+  transform: scale(1.05);
+}
+
+.footer-block a:hover::after {
+  width: 60%;
+}
+
+.span-para-contact:hover {
+  color: var(--secondary-text-color);
+  transform: scale(1.05);
+}
+
+.footer-block li:hover .icon-wrap {
+  transform: translateY(-3px) scale(1.1);
+  filter: brightness(1.1);
+}
+
+.footer-block li.span-para-contact a,
+.footer-block li.span-para-contact a:hover,
+.footer-block li.span-para-contact a:focus {
+  color: var(--primary-text-color) !important;
+  transform: none !important;
+  text-decoration: none !important;
+}
+.footer-block li.span-para-contact a::after {
+  display: none !important;
 }
 
 /* Media Queries */
@@ -2590,7 +2639,10 @@ ul {
 
   /* Footer Section */
   .span-para {
-    font-size: 9px;
+    font-size: 12px;
+  }
+  .span-para-contact > a {
+    text-align: start;
   }
   .custom-40 {
     flex: 0 0 100%;
@@ -2615,11 +2667,8 @@ ul {
     width: auto;
     max-width: 680px;
   }
-  .footer-block li .icon-wrap img {
-    margin-bottom: 10px;
-  }
   .span-num > span {
-    font-size: 9px;
+    font-size: 12px;
   }
 }
 
@@ -2791,7 +2840,10 @@ ul {
 
   /* Footer Section */
   .span-para {
-    font-size: 10px;
+    font-size: 12px;
+  }
+  .span-para-contact > a {
+    text-align: start;
   }
   .custom-20 {
     flex: 0 0 50%;
