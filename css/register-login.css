@@ -1081,6 +1081,7 @@ ul {
 /* Media Queries */
 /* <=1600px */
 @media screen and (max-width: 1600px) {
+  /* Auth Section */
   .checkbox-label {
     margin-bottom: 20px;
   }
