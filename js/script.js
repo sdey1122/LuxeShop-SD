@@ -119,3 +119,37 @@ $(document).on("click", ".prod-heart", function (e) {
 
   $icon.toggleClass("fa-regular fa-solid");
 });
+
+// Scroll Lock While Offcanvas is opened
+document.addEventListener("DOMContentLoaded", () => {
+  const oc = document.getElementById("offcanvasNavbar");
+  if (!oc) return;
+
+  let savedScrollY = 0;
+
+  function lockBody() {
+    savedScrollY = window.scrollY || document.documentElement.scrollTop;
+
+    const sb = window.innerWidth - document.documentElement.clientWidth;
+    if (sb > 0) document.body.style.paddingRight = sb + "px";
+
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${savedScrollY}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
+  }
+
+  function unlockBody() {
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.left = "";
+    document.body.style.right = "";
+    document.body.style.width = "";
+    document.body.style.paddingRight = "";
+    window.scrollTo(0, savedScrollY);
+  }
+
+  oc.addEventListener("show.bs.offcanvas", lockBody);
+  oc.addEventListener("hidden.bs.offcanvas", unlockBody);
+});
