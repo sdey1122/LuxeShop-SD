@@ -187,6 +187,145 @@
           </div>
         </div>
       </section>
+      <!-- Form Section -->
+      <section class="contact-form-section py-5">
+        <div class="container">
+          <div class="contact-wrap row align-items-stretch">
+            <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+              <div class="contact-left">
+                <div class="eyebrow">CONTACT FORM</div>
+                <h2 class="ask-title display-6">
+                  Ask Us <span>Anything</span>
+                </h2>
+                <form id="contactForm" novalidate>
+                  <div class="form-block">
+                    <label for="name" class="form-label">Your Name here</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      class="form-control custom-field"
+                      placeholder="Enter your full name"
+                      required
+                      minlength="5"
+                      pattern="^[A-Za-z][A-Za-z\\s'.-]{1,}$"
+                    />
+                    <div class="invalid-feedback">
+                      Name must have at least 5 characters and contain letters
+                      only.
+                    </div>
+                  </div>
+                  <div class="form-block">
+                    <label for="email" class="form-label"
+                      >Your E-Mail here</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      class="form-control custom-field"
+                      placeholder="Enter your email address"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Please enter a valid email address.
+                    </div>
+                  </div>
+
+                  <div class="form-block">
+                    <label for="message" class="form-label"
+                      >Write a Message</label
+                    >
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="7"
+                      class="form-control custom-field"
+                      placeholder="Write your message..."
+                      required
+                      minlength="10"
+                    ></textarea>
+                    <div class="invalid-feedback">
+                      Message should be at least 10 characters.
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <button type="submit" class="btn-fancy" id="submitBtn">
+                      <span class="txt">submit</span>
+                      <span class="txt2">sent!</span>
+                      <span class="loader-container">
+                        <span class="loader"></span>
+                      </span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <aside class="contact-right">
+                <div class="info-block">
+                  <div class="info-title">Address</div>
+                  <div class="muted-line">
+                    Tage-Hansens Gade 35, 8000 Aarhus
+                  </div>
+                  <div class="muted-line">
+                    Tage-Hansens Gade 35, 8000 Aarhus
+                  </div>
+                </div>
+                <div class="divider"></div>
+                <div class="info-block">
+                  <div class="info-title">Phone</div>
+                  <a class="anchor" href="tel:+1952724472">+1 952 724 472</a>
+                  <div>
+                    <a href="tel:001952724472" class="muted-line"
+                      >0019-<strong>52724472</strong></a
+                    >
+                  </div>
+                </div>
+                <div class="divider"></div>
+                <div class="info-block">
+                  <div class="info-title">Email</div>
+                  <a class="anchor" href="mailto:luxeshop.com">luxeshop.com</a>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        class="modal fade"
+        id="thankYouModal"
+        tabindex="-1"
+        aria-labelledby="thankYouModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="thankYouModalLabel">Thank You</h5>
+              <button
+                type="button"
+                class="btn-close shadow-none"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <span class="modal-punch">Your message has been sent.</span> We'll
+              get back to you shortly.
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-modal-dark"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <!-- Boostrap CDN -->
     <script
@@ -195,6 +334,6 @@
       crossorigin="anonymous"
     ></script>
     <!-- Custom JS -->
-    <script src="./js/about.js"></script>
+    <script src="./js/contact-us.js"></script>
   </body>
 </html>
