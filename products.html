@@ -20,7 +20,7 @@
       crossorigin="anonymous"
     />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./css/about.css" />
+    <link rel="stylesheet" href="./css/products.css" />
   </head>
   <body>
     <!-- Header Section -->
@@ -194,6 +194,309 @@
           </div>
         </div>
       </section>
+      <!-- Items Section -->
+      <section class="items-section" aria-labelledby="items-heading">
+        <div class="container">
+          <div class="row g-3 item-wrap">
+            <aside class="col-xl-3 d-none d-xl-block">
+              <div class="filters-col">
+                <div class="filters-inner">
+                  <div class="filter-card">
+                    <div class="pill-title"><span>Search Product</span></div>
+                    <div class="search-input-outer">
+                      <input
+                        type="text"
+                        placeholder="Search Product"
+                        class="filter-search"
+                      />
+                      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    </div>
+                  </div>
+                  <div class="filter-card">
+                    <div class="pill-title"><span>Product Colors</span></div>
+                    <ul class="filter-list">
+                      <li><span>Blue</span><span>(1)</span></li>
+                      <li><span>Gray</span><span>(2)</span></li>
+                      <li><span>Red</span><span>(3)</span></li>
+                    </ul>
+                  </div>
+                  <div class="filter-card">
+                    <div class="pill-title"><span>Filter by price</span></div>
+                    <div class="range-wrap">
+                      <input
+                        type="range"
+                        min="0"
+                        max="200"
+                        value="50"
+                        class="range"
+                      />
+                      <div class="range-meta">
+                        <span class="price-hint">Price: $0 – $20</span>
+                        <button class="btn-small">Filter</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="filter-card">
+                    <div class="pill-title"><span>Recent Products</span></div>
+                    <ul class="recent-list">
+                      <li class="recent-item">
+                        <div class="recent-thumb">
+                          <img
+                            src="./assets/page-one-images/about-discover-products/item_three.png"
+                            alt=""
+                          />
+                        </div>
+                        <div class="recent-meta">
+                          <div class="recent-name">
+                            YAZ Persian Herb Face Oil
+                          </div>
+                          <div
+                            class="rating rating-gold"
+                            data-default="5"
+                          ></div>
+                          <div class="recent-price">29,900 Kr.</div>
+                        </div>
+                      </li>
+                      <li class="recent-item">
+                        <div class="recent-thumb">
+                          <img
+                            src="./assets/page-one-images/about-discover-products/item_two.png"
+                            alt=""
+                          />
+                        </div>
+                        <div class="recent-meta">
+                          <div class="recent-name">
+                            YAZ Vitamin A Hand Cream
+                          </div>
+                          <div
+                            class="rating rating-gold"
+                            data-default="3"
+                          ></div>
+                          <div class="recent-price">14,900 Kr.</div>
+                        </div>
+                      </li>
+                      <li class="recent-item">
+                        <div class="recent-thumb">
+                          <img
+                            src="./assets/page-one-images/about-discover-products/item_one.png"
+                            alt=""
+                          />
+                        </div>
+                        <div class="recent-meta">
+                          <div class="recent-name">YAZ Vitamin A Face Mask</div>
+                          <div
+                            class="rating rating-gold"
+                            data-default="4"
+                          ></div>
+                          <div class="recent-price">36,999 Kr.</div>
+                        </div>
+                      </li>
+                      <li class="recent-item">
+                        <div class="recent-thumb">
+                          <img
+                            src="./assets/page-one-images/about-discover-products/item_three.png"
+                            alt=""
+                          />
+                        </div>
+                        <div class="recent-meta">
+                          <div class="recent-name">
+                            YAZ Hair Shampoo AxZ Plus
+                          </div>
+                          <div
+                            class="rating rating-gold"
+                            data-default="2"
+                          ></div>
+                          <div class="recent-price">12,900 Kr.</div>
+                        </div>
+                      </li>
+                      <li class="recent-item">
+                        <div class="recent-thumb">
+                          <img
+                            src="./assets/page-one-images/about-discover-products/item_two.png"
+                            alt=""
+                          />
+                        </div>
+                        <div class="recent-meta">
+                          <div class="recent-name">
+                            YAZ Vitamin A Face Mask AP
+                          </div>
+                          <div
+                            class="rating rating-gold"
+                            data-default="4"
+                          ></div>
+                          <div class="recent-price">36,000 Kr.</div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </aside>
+            <div class="col-xl-9">
+              <div class="items-hero" aria-hidden="true"></div>
+              <div class="items-toolbar under-hero">
+                <div class="results-info">Showing 1 - 9 of 21 results</div>
+                <div class="toolbar-actions">
+                  <button
+                    class="btn-filter d-inline-flex d-xl-none"
+                    id="btnFilter"
+                    type="button"
+                  >
+                    <i class="fa-solid fa-filter"></i
+                    ><span class="btn-filter-label">Filters</span>
+                  </button>
+                  <label class="sort-wrap">
+                    <select class="sort-select" aria-label="Default Sorting">
+                      <option selected>Default Sorting</option>
+                      <option value="popular">Most Popular</option>
+                      <option value="new">Newest</option>
+                      <option value="price-low">Price: Low to High</option>
+                      <option value="price-high">Price: High to Low</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+              <div class="products-grid">
+                <article class="prod-card">
+                  <div class="prod-thumb">
+                    <img
+                      src="./assets/page-one-images/about-discover-products/item_one.png"
+                      alt="YAZ Vitamin A Hand Cream"
+                    />
+                  </div>
+                  <div class="prod-meta">
+                    <h3 class="prod-name">YAZ Vitamin A Hand Cream</h3>
+                    <div class="rating rating-gold" data-default="3"></div>
+                    <div class="prod-price">14,900 Kr.</div>
+                  </div>
+                </article>
+                <article class="prod-card">
+                  <div class="prod-thumb">
+                    <img
+                      src="./assets/page-one-images/about-discover-products/item_two.png"
+                      alt="YAZ Vitamin A Face Mask"
+                    />
+                  </div>
+                  <h3 class="prod-name">YAZ Vitamin A Face Mask</h3>
+                  <div class="rating rating-gold" data-default="5"></div>
+                  <div class="prod-price">36,000 Kr.</div>
+                </article>
+                <article class="prod-card">
+                  <div class="prod-thumb">
+                    <img
+                      src="./assets/page-one-images/about-discover-products/item_three.png"
+                      alt="YAZ Hair Shampoo"
+                    />
+                  </div>
+                  <h3 class="prod-name">YAZ Hair Shampoo</h3>
+                  <div class="rating rating-gold" data-default="5"></div>
+                  <div class="prod-price">16,900 Kr.</div>
+                </article>
+                <article class="prod-card">
+                  <div class="prod-thumb">
+                    <img
+                      src="./assets/page-one-images/about-discover-products/itrm_four.png"
+                      alt="YAZ Vitamin A Face Cream"
+                    />
+                  </div>
+                  <h3 class="prod-name">YAZ Persian Herb Face Oil</h3>
+                  <div class="rating rating-gold" data-default="5"></div>
+                  <div class="prod-price">27,900 Kr.</div>
+                </article>
+                <article class="prod-card">
+                  <div class="prod-thumb">
+                    <img
+                      src="./assets/page-one-images/about-discover-products/item_three.png"
+                      alt="YAZ Persian Herb Face Oil"
+                    />
+                  </div>
+                  <h3 class="prod-name">YAZ Vitamin A Face Cream</h3>
+                  <div class="rating rating-gold" data-default="2"></div>
+                  <div class="prod-price">29,900 Kr.</div>
+                </article>
+                <article class="prod-card">
+                  <div class="prod-thumb">
+                    <img
+                      src="./assets/product-images/eye-crm.png"
+                      alt="YAZ Eye Cream"
+                    />
+                  </div>
+                  <h3 class="prod-name">YAZ Eye Cream</h3>
+                  <div class="rating rating-gold" data-default="4"></div>
+                  <div class="prod-price">30,000 Kr.</div>
+                </article>
+                <article class="prod-card">
+                  <div class="prod-thumb">
+                    <img
+                      src="./assets/product-images/spry_098.png"
+                      alt="YAZ Antioxidant Serum"
+                    />
+                  </div>
+                  <h3 class="prod-name">YAZ Antioxidant Serum</h3>
+                  <div class="rating rating-gold" data-default="3"></div>
+                  <div class="prod-price">35,000 Kr.</div>
+                </article>
+                <article class="prod-card">
+                  <div class="prod-thumb">
+                    <img
+                      src="./assets/page-one-images/about-discover-products/itrm_four.png"
+                      alt="YAZ Shaving Cream"
+                    />
+                  </div>
+                  <h3 class="prod-name">YAZ Shaving Cream</h3>
+                  <div class="rating rating-gold" data-default="1"></div>
+                  <div class="prod-price">14,400 Kr.</div>
+                </article>
+                <article class="prod-card">
+                  <div class="prod-thumb">
+                    <img
+                      src="./assets/product-images/h_med_0il.png"
+                      alt="YAZ Persian Herb Med Oil"
+                    />
+                  </div>
+                  <h3 class="prod-name">YAZ Persian Herb Med Oil</h3>
+                  <div class="rating rating-gold" data-default="4"></div>
+                  <div class="prod-price">12,000 Kr.</div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        id="filtersModal"
+        class="filters-modal"
+        aria-hidden="true"
+        role="dialog"
+        aria-modal="true"
+      >
+        <div class="filters-backdrop"></div>
+        <div
+          class="filters-dialog"
+          role="document"
+          aria-labelledby="filtersModalTitle"
+        >
+          <div class="filters-dialog-head">
+            <h3 id="filtersModalTitle">Filters</h3>
+            <button
+              class="filters-dialog-close"
+              id="filtersModalClose"
+              aria-label="Close filters"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <div class="filters-body" id="filtersModalBody"></div>
+          <div class="filters-dialog-foot">
+            <button id="filtersReset" class="filters-reset" type="button">
+              Reset
+            </button>
+            <button id="filtersApply" class="filters-apply" type="button">
+              Apply
+            </button>
+          </div>
+        </div>
+      </div>
     </main>
     <!-- Boostrap CDN -->
     <script
@@ -202,6 +505,6 @@
       crossorigin="anonymous"
     ></script>
     <!-- Custom JS -->
-    <script src="./js/about.js"></script>
+    <script src="./js/products.js"></script>
   </body>
 </html>

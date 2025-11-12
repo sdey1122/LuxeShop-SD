@@ -37,3 +37,179 @@ navLinks.forEach((link) => {
     link.classList.remove("active");
   }
 });
+
+// Star Rating Logic
+(function () {
+  function uid(prefix = "rt") {
+    return `${prefix}-${Math.random().toString(36).slice(2, 10)}`;
+  }
+
+  function setupRatings(scope = document) {
+    const blocks = scope.querySelectorAll(".rating");
+    blocks.forEach((wrap) => {
+      const radios = Array.from(wrap.querySelectorAll('input[type="radio"]'));
+      if (!radios.length) return;
+
+      const groupName = wrap.dataset.group || uid("rating");
+      wrap.dataset.group = groupName;
+
+      radios.forEach((input) => {
+        input.name = groupName;
+        const id = uid(groupName);
+        const label = input.nextElementSibling;
+        input.id = id;
+        if (label && label.tagName === "LABEL") {
+          label.setAttribute("for", id);
+          label.addEventListener("click", (e) => {
+            if (input.checked) {
+              e.preventDefault();
+              input.checked = false;
+              wrap.dataset.value = "0";
+              localStorage.removeItem("rating:" + groupName);
+            }
+          });
+        }
+        input.addEventListener("change", () => {
+          if (input.checked) {
+            wrap.dataset.value = input.value;
+            localStorage.setItem("rating:" + groupName, input.value);
+          }
+        });
+      });
+
+      const saved = localStorage.getItem("rating:" + groupName);
+      if (saved) {
+        const match = radios.find((r) => r.value === saved);
+        if (match) match.checked = true;
+        wrap.dataset.value = saved;
+      }
+    });
+  }
+
+  setupRatings();
+
+  // Mobile filters modal
+  const btnFilter = document.getElementById("btnFilter");
+  const modal = document.getElementById("filtersModal");
+  const mBody = document.getElementById("filtersModalBody");
+  const mClose = document.getElementById("filtersModalClose");
+
+  function openFilters() {
+    const desktopFiltersInner = document.querySelector(
+      ".filters-col .filters-inner"
+    );
+    if (desktopFiltersInner) {
+      mBody.innerHTML = "";
+      const clone = desktopFiltersInner.cloneNode(true);
+      mBody.appendChild(clone);
+      setupRatings(mBody);
+    }
+    modal.classList.add("open");
+    setTimeout(() => modal.classList.add("reveal"), 20);
+    document.documentElement.style.overflow = "hidden";
+    setTimeout(() => mClose.focus(), 80);
+  }
+  function closeFilters() {
+    modal.classList.remove("reveal", "open");
+    document.documentElement.style.overflow = "";
+  }
+
+  btnFilter?.addEventListener("click", openFilters);
+  mClose?.addEventListener("click", closeFilters);
+  modal?.addEventListener("click", (e) => {
+    if (e.target.classList.contains("filters-backdrop")) closeFilters();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("open")) closeFilters();
+  });
+})();
+
+// Radio Star logic
+document.querySelectorAll(".rating").forEach((wrap, idx) => {
+  const group = `rating-${idx}`;
+  const def = parseInt(wrap.dataset.default, 10) || 0;
+  if (wrap.querySelector("input")) return;
+  for (let v = 5; v >= 1; v--) {
+    const input = document.createElement("input");
+    const label = document.createElement("label");
+    input.type = "radio";
+    input.name = group;
+    input.id = `${group}-${v}`;
+    input.value = v;
+    if (v === def) input.checked = true;
+    label.setAttribute("for", input.id);
+    wrap.appendChild(input);
+    wrap.appendChild(label);
+  }
+});
+
+// Gold Star Logic
+document.querySelectorAll(".rating.rating-gold").forEach((wrap, idx) => {
+  if (wrap.children.length) return;
+  const group = `prod-${idx}`;
+  const def = parseInt(wrap.dataset.default, 10) || 0;
+  for (let v = 5; v >= 1; v--) {
+    const inp = document.createElement("input");
+    const lbl = document.createElement("label");
+    inp.type = "radio";
+    inp.name = group;
+    inp.id = `${group}-${v}`;
+    inp.value = v;
+    if (v === def) inp.checked = true;
+    lbl.setAttribute("for", inp.id);
+    wrap.appendChild(inp);
+    wrap.appendChild(lbl);
+  }
+});
+
+// Modal Logic
+const modalEl = document.getElementById("filtersModal");
+const modalBody = document.getElementById("filtersModalBody");
+const btnApply = document.getElementById("filtersApply");
+const btnReset = document.getElementById("filtersReset");
+
+btnApply?.addEventListener("click", () => {
+  document.documentElement.style.overflow = "";
+  modalEl.classList.remove("reveal", "open");
+});
+
+btnReset?.addEventListener("click", () => {
+  if (!modalBody) return;
+
+  modalBody
+    .querySelectorAll(
+      'input[type="text"], input[type="search"], input[type="email"], input[type="number"]'
+    )
+    .forEach((i) => {
+      i.value = "";
+    });
+
+  modalBody
+    .querySelectorAll('input[type="checkbox"], input[type="radio"]')
+    .forEach((i) => {
+      i.checked = false;
+    });
+
+  modalBody.querySelectorAll('input[type="range"]').forEach((r) => {
+    const dv = r.getAttribute("data-default");
+    r.value = dv ?? (r.min || 0);
+    const hint = modalBody.querySelector(".price-hint");
+    if (hint && r.min !== "" && r.max !== "") {
+      const min = Number(r.min || 0),
+        max = Number(r.max || 0);
+      hint.textContent = `Price: $${min} – $${Math.round(
+        (max - min) * (r.value / (r.max || 1)) + min
+      )}`;
+    }
+  });
+
+  modalBody.querySelectorAll(".rating").forEach((wrap) => {
+    wrap.dataset.value = "0";
+    const inputs = wrap.querySelectorAll('input[type="radio"]');
+    inputs.forEach((i) => {
+      i.checked = false;
+    });
+    const g = wrap.dataset.group;
+    if (g) localStorage.removeItem("rating:" + g);
+  });
+});
