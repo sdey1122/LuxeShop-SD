@@ -79,7 +79,7 @@ ul {
 
 .nav-icons {
   display: flex;
-  cursor: pointer;
+  height: fit-content;
 }
 
 .nav-link {
@@ -142,6 +142,7 @@ ul {
 .nav-icon-account,
 .nav-icon-cart {
   margin-right: 15px;
+  cursor: pointer;
 }
 
 #heartIcon {
@@ -149,6 +150,7 @@ ul {
   cursor: pointer;
   margin-top: 2px;
   transition: color 0.2s ease;
+  cursor: pointer;
 }
 
 #heartIcon.liked {
@@ -2621,7 +2623,7 @@ ul {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 18px 16px 20px;
+    padding: 20px 16px 20px;
     min-height: unset;
     z-index: 1;
   }

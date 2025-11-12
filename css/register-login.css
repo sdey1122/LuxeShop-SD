@@ -79,7 +79,7 @@ ul {
 
 .nav-icons {
   display: flex;
-  cursor: pointer;
+  height: fit-content;
 }
 
 .nav-link {
