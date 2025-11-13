@@ -41,6 +41,42 @@ ul {
   width: 100%;
 }
 
+/* GSAP */
+.flair {
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  background: rgba(166, 130, 104, 0.35);
+  mix-blend-mode: multiply;
+  transition: background-color 0.25s ease-out, opacity 0.25s ease-out;
+  z-index: 999999;
+}
+
+.sparkle {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999999;
+  opacity: 1;
+  transform: scale(1);
+  mix-blend-mode: color-dodge;
+  transition: background-color 0.15s ease-out;
+}
+
+.sparkle-gold {
+  background: rgba(166, 130, 104, 0.9);
+}
+
+.sparkle-white {
+  background: rgba(255, 255, 255, 0.9);
+}
+
 /* About Header Section */
 .navbar-container {
   max-width: 1480px;
@@ -151,7 +187,7 @@ ul {
   cursor: pointer;
   margin-top: 2px;
   transition: color 0.2s ease;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 #heartIcon.liked {
@@ -1419,6 +1455,10 @@ ul {
 
 /* <=1200px */
 @media screen and (max-width: 1200px) {
+  /* GSAP */
+  .flair {
+    display: none;
+  }
   /* About Header Section */
   .nav-link {
     font-size: 12px;

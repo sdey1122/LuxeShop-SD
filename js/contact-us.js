@@ -153,3 +153,94 @@ document.addEventListener("DOMContentLoaded", () => {
   oc.addEventListener("show.bs.offcanvas", lockBody);
   oc.addEventListener("hidden.bs.offcanvas", unlockBody);
 });
+
+// GSAP
+// Cursor + Sparkle
+gsap.set(".flair", { xPercent: -50, yPercent: -50 });
+
+let xTo = gsap.quickTo(".flair", "x", { duration: 0.6, ease: "power3" }),
+  yTo = gsap.quickTo(".flair", "y", { duration: 0.6, ease: "power3" });
+
+const flairEl = document.querySelector(".flair");
+const rootStyles = getComputedStyle(document.documentElement);
+const secondaryColor = rootStyles
+  .getPropertyValue("--secondary-text-color")
+  .trim();
+
+function getBackgroundColorAtPoint(x, y) {
+  let el = document.elementFromPoint(x, y);
+
+  while (el && el !== document.documentElement) {
+    const bg = getComputedStyle(el).backgroundColor;
+    if (bg && !bg.includes("0, 0, 0, 0")) {
+      return bg;
+    }
+
+    el = el.parentElement;
+  }
+  return (
+    getComputedStyle(document.body).backgroundColor || "rgb(255, 255, 255)"
+  );
+}
+
+function isAlmostWhite(rgbString) {
+  const match = rgbString.match(/(\d+),\s*(\d+),\s*(\d+)/);
+  if (!match) return false;
+
+  const [r, g, b] = match.slice(1).map(Number);
+  const threshold = 240;
+
+  return r >= threshold && g >= threshold && b >= threshold;
+}
+
+window.addEventListener("mousemove", (e) => {
+  xTo(e.clientX);
+  yTo(e.clientY);
+
+  const bg = getBackgroundColorAtPoint(e.clientX, e.clientY);
+
+  if (isAlmostWhite(bg)) {
+    flairEl.style.backgroundColor = secondaryColor;
+  } else {
+    flairEl.style.backgroundColor = "#ffffff";
+  }
+});
+
+// Sparkle
+function createSparkle(x, y, isLightBackground) {
+  const sparkle = document.createElement("div");
+  sparkle.classList.add("sparkle");
+
+  if (isLightBackground) {
+    sparkle.classList.add("sparkle-gold");
+  } else {
+    sparkle.classList.add("sparkle-white");
+  }
+
+  sparkle.style.left = `${x}px`;
+  sparkle.style.top = `${y}px`;
+
+  document.body.appendChild(sparkle);
+
+  const angle = Math.random() * Math.PI * 2;
+  const distance = 40 + Math.random() * 20;
+
+  gsap.to(sparkle, {
+    x: Math.cos(angle) * distance,
+    y: Math.sin(angle) * distance,
+    opacity: 0,
+    scale: 0,
+    duration: 0.6,
+    ease: "power2.out",
+    onComplete: () => sparkle.remove(),
+  });
+}
+
+window.addEventListener("click", (e) => {
+  const bg = getBackgroundColorAtPoint(e.clientX, e.clientY);
+  const isLightBg = isAlmostWhite(bg);
+
+  for (let i = 0; i < 12; i++) {
+    createSparkle(e.clientX, e.clientY, isLightBg);
+  }
+});
