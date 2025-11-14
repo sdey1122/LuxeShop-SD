@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LuxeShop</title>
+    <!-- AOS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
     <!-- FancyBox CDN -->
     <link
       rel="stylesheet"
@@ -201,7 +206,11 @@
         </div>
       </section>
       <!-- Form Section -->
-      <section class="contact-form-section py-5">
+      <section
+        class="contact-form-section py-5"
+        data-aos="fade-up"
+        data-aos-delay="150"
+      >
         <div class="container">
           <div class="contact-wrap row align-items-stretch">
             <div class="col-12 col-lg-6 mb-4 mb-lg-0">
@@ -339,10 +348,8 @@
           </div>
         </div>
       </div>
-
-      <!-- =========== MAP SECTION =========== -->
-      <!-- =========== FULL MAP SECTION (inline, no modal) =========== -->
-      <section class="map-section py-5">
+      <!-- Map Scetion -->
+      <section class="map-section py-5" data-aos="fade-up" data-aos-delay="150">
         <div class="container">
           <div class="map-head text-center">
             <div class="eyebrow">OUR LOCATION</div>
@@ -350,10 +357,7 @@
               Find Us <span>On the Map</span>
             </h2>
           </div>
-
-          <!-- Map card -->
           <div class="map-card">
-            <!-- Controls (margin-based spacing) -->
             <div class="map-toolbar">
               <button class="btn-map toggle-style" data-style="default">
                 Default
@@ -361,7 +365,6 @@
               <button class="btn-map toggle-style" data-style="sat">
                 Satellite
               </button>
-
               <a
                 class="btn-map dir-link"
                 target="_blank"
@@ -371,8 +374,6 @@
                 Get Directions
               </a>
             </div>
-
-            <!-- Responsive map frame -->
             <div class="map-frame">
               <iframe
                 id="gmapFrame"
@@ -389,7 +390,7 @@
       </section>
     </main>
     <!-- Footer Section -->
-    <footer class="footer-section">
+    <footer class="footer-section" data-aos="fade-up" data-aos-delay="150">
       <div class="container">
         <div class="footer-copy">
           <ul class="footer-logo">
@@ -628,9 +629,11 @@
         </div>
       </div>
     </footer>
+    <!-- AOS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <!-- GSAP CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <!-- FancyBox CDN -->
     <link
       rel="stylesheet"

@@ -197,7 +197,7 @@ btnReset?.addEventListener("click", () => {
     if (hint && r.min !== "" && r.max !== "") {
       const min = Number(r.min || 0),
         max = Number(r.max || 0);
-      hint.textContent = `Price: $${min} – $${Math.round(
+      hint.textContent = `Price: $${min} - $${Math.round(
         (max - min) * (r.value / (r.max || 1)) + min
       )}`;
     }
@@ -303,4 +303,12 @@ window.addEventListener("click", (e) => {
   for (let i = 0; i < 12; i++) {
     createSparkle(e.clientX, e.clientY, isLightBg);
   }
+});
+
+// AOS Animation
+AOS.init({
+  duration: 700,
+  once: false,
+  easing: "ease-out-cubic",
+  offset: 120,
 });

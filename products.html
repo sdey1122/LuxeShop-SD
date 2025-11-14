@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LuxeShop</title>
+     <!-- AOS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
     <!-- Font-awesome CDN -->
     <link
       rel="stylesheet"
@@ -196,7 +201,7 @@
         </div>
       </section>
       <!-- Items Section -->
-      <section class="items-section" aria-labelledby="items-heading">
+      <section class="items-section" aria-labelledby="items-heading" data-aos="fade-up" data-aos-delay="150">
         <div class="container">
           <div class="row g-3 item-wrap">
             <aside class="col-xl-3 d-none d-xl-block">
@@ -358,7 +363,7 @@
                 </div>
               </div>
               <div class="products-grid">
-                <article class="prod-card">
+                <div class="prod-card">
                   <div class="prod-thumb">
                     <img
                       src="./assets/page-one-images/about-discover-products/item_one.png"
@@ -370,8 +375,8 @@
                     <div class="rating rating-gold" data-default="3"></div>
                     <div class="prod-price">14,900 Kr.</div>
                   </div>
-                </article>
-                <article class="prod-card">
+                </div>
+                <div class="prod-card">
                   <div class="prod-thumb">
                     <img
                       src="./assets/page-one-images/about-discover-products/item_two.png"
@@ -381,8 +386,8 @@
                   <h3 class="prod-name">YAZ Vitamin A Face Mask</h3>
                   <div class="rating rating-gold" data-default="5"></div>
                   <div class="prod-price">36,000 Kr.</div>
-                </article>
-                <article class="prod-card">
+                </div>
+                <div class="prod-card">
                   <div class="prod-thumb">
                     <img
                       src="./assets/page-one-images/about-discover-products/item_three.png"
@@ -392,8 +397,8 @@
                   <h3 class="prod-name">YAZ Hair Shampoo</h3>
                   <div class="rating rating-gold" data-default="5"></div>
                   <div class="prod-price">16,900 Kr.</div>
-                </article>
-                <article class="prod-card">
+                </div>
+                <div class="prod-card">
                   <div class="prod-thumb">
                     <img
                       src="./assets/page-one-images/about-discover-products/itrm_four.png"
@@ -403,8 +408,8 @@
                   <h3 class="prod-name">YAZ Persian Herb Face Oil</h3>
                   <div class="rating rating-gold" data-default="5"></div>
                   <div class="prod-price">27,900 Kr.</div>
-                </article>
-                <article class="prod-card">
+                </div>
+                <div class="prod-card">
                   <div class="prod-thumb">
                     <img
                       src="./assets/page-one-images/about-discover-products/item_three.png"
@@ -414,8 +419,8 @@
                   <h3 class="prod-name">YAZ Vitamin A Face Cream</h3>
                   <div class="rating rating-gold" data-default="2"></div>
                   <div class="prod-price">29,900 Kr.</div>
-                </article>
-                <article class="prod-card">
+                </div>
+                <div class="prod-card">
                   <div class="prod-thumb">
                     <img
                       src="./assets/product-images/eye-crm.png"
@@ -425,8 +430,8 @@
                   <h3 class="prod-name">YAZ Eye Cream</h3>
                   <div class="rating rating-gold" data-default="4"></div>
                   <div class="prod-price">30,000 Kr.</div>
-                </article>
-                <article class="prod-card">
+                </div>
+                <div class="prod-card">
                   <div class="prod-thumb">
                     <img
                       src="./assets/product-images/spry_098.png"
@@ -436,8 +441,8 @@
                   <h3 class="prod-name">YAZ Antioxidant Serum</h3>
                   <div class="rating rating-gold" data-default="3"></div>
                   <div class="prod-price">35,000 Kr.</div>
-                </article>
-                <article class="prod-card">
+                </div>
+                <div class="prod-card">
                   <div class="prod-thumb">
                     <img
                       src="./assets/page-one-images/about-discover-products/itrm_four.png"
@@ -447,8 +452,8 @@
                   <h3 class="prod-name">YAZ Shaving Cream</h3>
                   <div class="rating rating-gold" data-default="1"></div>
                   <div class="prod-price">14,400 Kr.</div>
-                </article>
-                <article class="prod-card">
+                </div>
+                <div class="prod-card">
                   <div class="prod-thumb">
                     <img
                       src="./assets/product-images/h_med_0il.png"
@@ -458,7 +463,7 @@
                   <h3 class="prod-name">YAZ Persian Herb Med Oil</h3>
                   <div class="rating rating-gold" data-default="4"></div>
                   <div class="prod-price">12,000 Kr.</div>
-                </article>
+                </div>
               </div>
             </div>
           </div>
@@ -498,9 +503,8 @@
           </div>
         </div>
       </div>
-
       <!-- Batch Section -->
-      <section class="batch-section">
+      <section class="batch-section" data-aos="fade-up" data-aos-delay="150">
         <div class="container batch-container">
           <div class="batch-row">
             <div class="batch">
@@ -562,9 +566,8 @@
         </div>
       </section>
     </main>
-
     <!-- Footer Section -->
-    <footer class="footer-section">
+    <footer class="footer-section" data-aos="fade-up" data-aos-delay="150">
       <div class="container">
         <div class="footer-copy">
           <ul class="footer-logo">
@@ -801,9 +804,11 @@
         </div>
       </div>
     </footer>
+    <!-- AOS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <!-- GSAP CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <!-- Boostrap CDN -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

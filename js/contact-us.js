@@ -244,3 +244,11 @@ window.addEventListener("click", (e) => {
     createSparkle(e.clientX, e.clientY, isLightBg);
   }
 });
+
+// AOS Animation
+AOS.init({
+  duration: 700,
+  once: false,
+  easing: "ease-out-cubic",
+  offset: 120,
+});
