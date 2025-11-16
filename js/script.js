@@ -395,7 +395,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     loader.classList.add("luxshop-loader--hide");
     document.body.classList.remove("luxshop-loader-active");
-  }, 1400);
+  }, 3000);
 });
 
 // Feature Scetion 2.0
