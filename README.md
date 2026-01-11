@@ -349,7 +349,7 @@ These features can transform it into a functional full-stack e-commerce system.
 
 You can reach me for collaborations, freelance projects, or full-time opportunities:
 
-Subhankar Dey
+by Subhankar Dey
 Frontend Developer | UI/UX Designer
 🌐 Portfolio: https://sdey1122.github.io/Subhankar-Dey-Personal-Portfolio-Website/
 💼 GitHub: https://github.com/sdey1122
